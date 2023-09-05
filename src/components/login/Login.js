@@ -5,6 +5,7 @@ import TextInput from '../common/textinput/TextInput'
 import Button from '../common/button/Button'
 import messageIcon from '../../images/message.png'
 import padlockIcon from '../../images/padlock.png'
+import './login.css'
 
 const Login = () => {
     return (
@@ -19,7 +20,8 @@ const Login = () => {
                     <TextInput label={"Email"} placeholder={"johnmarvin@domain.com"} type={"email"} customIcon={messageIcon} />
                     <TextInput label={"Password"} placeholder={"password"} type={"password"} customIcon={padlockIcon} />
                     <Button buttonText={"Sign In"} />
-                    <p><a href="#signin" className='link-for-singin'>Forgot password?</a></p>
+                    <p><a href="#forgot-password" className='link-for-forgot-password'>Forgot password?</a></p>
+                    <p> Already have an account? <a href="#signup" className='link-for-signup'>Sign Up</a></p>
                 </div>
             </section>
         </main>

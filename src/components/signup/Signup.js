@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from '../../images/Logo.png';
-import signupImage from '../../images/signup.png';
+import signupImage from '../../images/authImage.png';
 import personIcon from '../../images/person.png';
 import messageIcon from '../../images/message.png';
 import padlockIcon from '../../images/padlock.png'

@@ -8,8 +8,8 @@ import padlockIcon from '../../images/padlock.png'
 
 const Login = () => {
     return (
-        <main>
-            <section>
+        <main className='login-main-container'>
+            <section className='login'>
                 <div className="login-left-container">
                     <img src={Logo} alt="logo" className="logo" />
                     <h1>Welcome to <span>Eduvi Online</span> <span>Learning platform</span></h1>

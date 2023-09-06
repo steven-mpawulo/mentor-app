@@ -7,6 +7,7 @@ import padlockIcon from '../../images/padlock.png'
 import TextInput from '../common/textinput/TextInput';
 import Button from '../common/button/Button';
 import './signup.css';
+const Spinner = require('react-spinkit');
 
 
 const Signup = () => {
@@ -87,7 +88,7 @@ const Signup = () => {
                     <TextInput label={"Last Name"} placeholder={"John Marvin"} type={"text"} customIcon={personIcon} inputValue={lastName} onChangeHandler={onLastNameChanged}/>
                     <TextInput label={"Email"} placeholder={"johnmarvin@domain.com"} type={"email"} customIcon={messageIcon} inputValue={email} onChangeHandler={onEmailChanged}/>
                     <TextInput label={"Password"} placeholder={"password"} type={"password"} customIcon={padlockIcon} inputValue={password} onChangeHandler={onPasswordChanged}/>
-                    <Button buttonText={isLoading ? "Loading...": "Sign Up"} onClickHandler={buttonClicked}/>
+                    <Button buttonText={isLoading ? <Spinner name='sk-chase' color='white' fadeIn='none'/>: "Sign Up"} onClickHandler={buttonClicked}/>
                     </form>
                     
                     <p>Already have an account? <a href="#signin" className='link-for-singin'>Sign in</a></p>

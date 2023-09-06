@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from '../../../images/Logo.png'
 import accountIcon from '../../../images/accountIcon.png'
+import './header.css'
 
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
         <img src={Logo} alt="logo" />
         <div className="container-for-account">
             <span>My Account</span>
-            <img src={accountIcon} alt="icon-for-account" />
+            <img src={accountIcon} alt="icon-for-account" className='account-icon' />
         </div>
     </header>
   )

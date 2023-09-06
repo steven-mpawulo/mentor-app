@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from '../../images/Logo.png'
 import loginImage from '../../images/authImage.png'
 import TextInput from '../common/textinput/TextInput'
@@ -8,6 +8,22 @@ import padlockIcon from '../../images/padlock.png'
 import './login.css'
 
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const onEmailChanged = (event) => {
+        setEmail(event.target.value);
+    }
+
+    const onPasswordChanged = (event) => {
+        setPassword(event.target.value);
+    } 
+
+    const onButtonClicked = (event) => {
+        event.preventDefault();
+        console.log('email', email);
+        console.log('password', password);
+    }
     return (
         <main className='login-main-container'>
             <section className='login'>
@@ -17,9 +33,11 @@ const Login = () => {
                     <img src={loginImage} alt="signup" className="login-image" />
                 </div>
                 <div className="login-right-container">
-                    <TextInput label={"Email"} placeholder={"johnmarvin@domain.com"} type={"email"} customIcon={messageIcon} />
-                    <TextInput label={"Password"} placeholder={"password"} type={"password"} customIcon={padlockIcon} />
-                    <Button buttonText={"Sign In"} />
+                    <form action="">
+                    <TextInput label={"Email"} placeholder={"johnmarvin@domain.com"} type={"email"} customIcon={messageIcon} inputValue={email} onChangeHandler={onEmailChanged}/>
+                    <TextInput label={"Password"} placeholder={"password"} type={"password"} customIcon={padlockIcon} inputValue={password} onChangeHandler={onPasswordChanged} />
+                    <Button buttonText={"Sign In"} onClickHandler={onButtonClicked} />
+                    </form>
                     <p><a href="#forgot-password" className='link-for-forgot-password'>Forgot password?</a></p>
                     <p> Already have an account? <a href="#signup" className='link-for-signup'>Sign Up</a></p>
                 </div>

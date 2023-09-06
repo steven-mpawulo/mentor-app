@@ -8,7 +8,7 @@ const TextInput = ({type, placeholder, label, customIcon, inputValue, onChangeHa
         <br />
         <div className="container-for-input">
           <img src={customIcon} alt="custom-icon" className="custom-icon"/>
-        <input type={type} placeholder= {placeholder} name= {label} id= {label} value={inputValue} onChange={onChangeHandler}/>
+        <input type={type} placeholder= {placeholder} name= {label} id= {label} value={inputValue} onChange={onChangeHandler} required/>
         </div>
         
     </div>

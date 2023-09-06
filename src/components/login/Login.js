@@ -14,11 +14,20 @@ const Login = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     const onEmailChanged = (event) => {
-        setEmail(event.target.value);
+        if (email !== null) {
+            setEmail(event.target.value);
+        } else {
+            console.log("please provide email");
+        }
+        
     }
 
     const onPasswordChanged = (event) => {
-        setPassword(event.target.value);
+        if (password !== null) {
+            setPassword(event.target.value);
+        } else {
+            console.log("please provide password");
+        }
     } 
 
     const login =  async (url, data) => {
@@ -50,11 +59,16 @@ const Login = () => {
         event.preventDefault();
         console.log('email', email);
         console.log('password', password);
-        const data = {
-            "email": email,
-            "password": password,
+        if (email && password) {
+            const data = {
+                "email": email,
+                "password": password,
+            }
+            login("http://localhost:5000/api/v1/signin", data);
+        } else {
+            setIsLoading(false);
+            console.log("please provide email and password");
         }
-        login("http://localhost:5000/api/v1/signin", data);
     }
     return (
         <main className='login-main-container'>
@@ -66,7 +80,7 @@ const Login = () => {
                 </div>
                 <div className="login-right-container">
                     <form action="">
-                    <TextInput label={"Email"} placeholder={"johnmarvin@domain.com"} type={"email"} customIcon={messageIcon} inputValue={email} onChangeHandler={onEmailChanged}/>
+                    <TextInput label={"Email"} placeholder={"johnmarvin@domain.com"} type={"email"} customIcon={messageIcon} inputValue={email} onChangeHandler={onEmailChanged} />
                     <TextInput label={"Password"} placeholder={"password"} type={"password"} customIcon={padlockIcon} inputValue={password} onChangeHandler={onPasswordChanged} />
                     <Button buttonText={isLoading ? <Spinner name='sk-chase' color='white' fadeIn='none'/>: "Sign In"} onClickHandler={onButtonClicked} />
                     </form>

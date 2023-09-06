@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from '../../../images/Logo.png'
 import accountIcon from '../../../images/accountIcon.png'
 
-const HomeHeader = () => {
+const Header = () => {
   return (
     <header className='home-header'>
         <img src={Logo} alt="logo" />
@@ -14,4 +14,4 @@ const HomeHeader = () => {
   )
 }
 
-export default HomeHeader
+export default Header
